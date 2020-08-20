@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import * as yup from 'yup';
 import axios from 'axios';
-import UserCard from './userCard';
+import UserCard from './UserCard';
 
 
 // Validation Using Yup
@@ -88,6 +88,7 @@ const formSubmit = e => {
         .post("https://reqres.in/api/users", formState)
         .then(response => {
             const apiReturn = response.data
+            console.log(response.data)
             setUserList([...userList, apiReturn])
             setFormState(formState)
         })
